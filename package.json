@@ -7,8 +7,7 @@
     "build": "webpack --mode production",
     "builddev": "webpack --mode development",
     "start": "webpack serve",
-    "lint": "eslint src/**/*.ts",
-    "format": "eslint src/**/*.ts --fix",
+    "lint":"pretty-quick --staged && lint-staged",
     "prepare": "husky install"
   },
   "author": "",
@@ -27,6 +26,8 @@
     "eslint-plugin-prettier": "^3.4.0",
     "html-webpack-plugin": "^5.3.2",
     "husky": "^7.0.1",
+    "lint-staged": "^11.0.0",
+    "pretty-quick": "^3.1.1",
     "prettier": "^2.3.2",
     "ts-loader": "^9.2.3",
     "typescript": "^4.3.5",
@@ -35,7 +36,10 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run prettier"
-    }
+      "pre-commit": "yarn lint"
+   }
+  },
+  "lint-staged": {
+    "*.{ts,js}": "eslint --cache --fix"
   }
 }
