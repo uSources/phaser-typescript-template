@@ -7,8 +7,9 @@
     "build": "webpack --mode production",
     "builddev": "webpack --mode development",
     "start": "webpack serve",
-    "lint": "eslint . --ext .ts",
-    "prettier": "prettier src/**/*.ts --write"
+    "lint": "eslint src/**/*.ts",
+    "format": "eslint src/**/*.ts --fix",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -23,18 +24,23 @@
     "copy-webpack-plugin": "^9.0.1",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "html-webpack-plugin": "^5.3.2",
     "husky": "^7.0.1",
-    "lint-staged": "^11.0.0",
     "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1",
     "ts-loader": "^9.2.3",
     "typescript": "^4.3.5",
     "webpack": "^5.44.0",
     "webpack-cli": "^4.7.2"
   },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run lint && npm run prettier"
     }
   }
 }

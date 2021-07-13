@@ -1,8 +1,11 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "moduleResolution": "node",
-    "sourceMap": true
-  },
-  "include": ["./src/**/*"]
+  "compilerOptions":
+    {
+      "target": "es2018",
+      "module": "commonjs",
+      "outDir": "dist",
+      "sourceMap": true,
+    },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"],
 }
