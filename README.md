@@ -2,13 +2,13 @@
 
 
 ## Description
-Custom template for my personal proyects
+Custom template for my personal projects
 
 Uses Webpack + ESlint + Prettier + Husky + Commitlint
 
 
 ## Usage
-Clone the proyect
+Clone the project
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
